@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StyleHub - Clothing Store</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background: #f4f4f4;
+        }
+
+        header {
+            background: #111;
+            color: white;
+            padding: 15px 50px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        header h1 {
+            font-size: 24px;
+        }
+
+        nav a {
+            color: white;
+            margin-left: 20px;
+            text-decoration: none;
+        }
+
+        nav a:hover {
+            color: #f39c12;
+        }
+
+        .hero {
+            height: 80vh;
+            background: url('https://images.unsplash.com/photo-1521335629791-ce4aec67dd47') no-repeat center/cover;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            text-align: center;
+        }
+
+        .hero h2 {
+            font-size: 48px;
+        }
+
+        .hero button {
+            margin-top: 20px;
+            padding: 10px 20px;
+            border: none;
+            background: #f39c12;
+            color: white;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .products {
+            padding: 50px;
+            text-align: center;
+        }
+
+        .products h2 {
+            margin-bottom: 30px;
+        }
+
+        .product-container {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .card {
+            background: white;
+            width: 250px;
+            padding: 15px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+
+        .card img {
+            width: 100%;
+            border-radius: 10px;
+        }
+
+        .card h3 {
+            margin: 10px 0;
+        }
+
+        .card button {
+            background: #111;
+            color: white;
+            padding: 8px 15px;
+            border: none;
+            cursor: pointer;
+        }
+
+        footer {
+            background: #111;
+            color: white;
+            text-align: center;
+            padding: 15px;
+            margin-top: 30px;
+        }
+
+        /* Responsive */
+        @media(max-width: 768px) {
+            .hero h2 {
+                font-size: 30px;
+            }
+
+            header {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>StyleHub</h1>
+    <nav>
+        <a href="#">Home</a>
+        <a href="#products">Products</a>
+        <a href="#">Contact</a>
+    </nav>
+</header>
+
+<section class="hero">
+    <div>
+        <h2>Upgrade Your Style</h2>
+        <button onclick="shopNow()">Shop Now</button>
+    </div>
+</section>
+
+<section class="products" id="products">
+    <h2>Our Collection</h2>
+
+    <div class="product-container">
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1523381210434-271e8be1f52b" alt="">
+            <h3>T-Shirt</h3>
+            <p>$20</p>
+            <button onclick="addToCart('T-Shirt')">Add to Cart</button>
+        </div>
+
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1541099649105-f69ad21f3246" alt="">
+            <h3>Jacket</h3>
+            <p>$50</p>
+            <button onclick="addToCart('Jacket')">Add to Cart</button>
+        </div>
+
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1516826957135-700dedea698c" alt="">
+            <h3>Jeans</h3>
+            <p>$40</p>
+            <button onclick="addToCart('Jeans')">Add to Cart</button>
+        </div>
+    </div>
+</section>
+
+<footer>
+    <p>© 2026 StyleHub | All Rights Reserved</p>
+</footer>
+
+<script>
+    function shopNow() {
+        document.getElementById("products").scrollIntoView({ behavior: "smooth" });
+    }
+
+    function addToCart(item) {
+        alert(item + " added to cart!");
+    }
+</script>
+
+</body>
+</html>
